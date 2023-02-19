@@ -15,7 +15,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
           level: info
-          paht: "testdata/a.php"
+          paht: "testdata/Test.php"
           config: "testdata/php-cs-fixer.dist.php"
           rules: "@PSR12"  
 
@@ -30,7 +30,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
           level: warning
-          path: "testdata/a.php"
+          path: "testdata/Test.php"
           config: "testdata/php-cs-fixer.dist.php"
           rules: "@PSR12" 
 
@@ -46,6 +46,6 @@ jobs:
           reporter: github-pr-review
           level: error
           reviewdog_flags: -filter-mode=file -fail-on-error
-          path: "testdata/a.php"
+          path: "testdata/Test.php"
           config: "testdata/php-cs-fixer.dist.php"
           rules: "@PSR12" 
