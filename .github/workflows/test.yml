@@ -15,7 +15,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
           level: info
-          paht: "testdata/Test.php"
+          path: "testdata/Test.php"
           config: "testdata/php-cs-fixer.dist.php"
           rules: "@PSR12"  
 
