@@ -12,6 +12,8 @@ php-cs-fixer --version
 
 php-cs-fixer fix "${INPUT_PATH}" \
       --config="${INPUT_CONFIG}" \
+      --diff \
+      --dry-run \
   | python3 parse.py \
   | reviewdog -name="php-cs-fixer" \
       -f=diff \
