@@ -5,6 +5,7 @@ ENV REVIEWDOG_VERSION=v0.14.1
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 # hadolint ignore=DL3006
+RUN apk --no-cache add
 RUN apk --no-cache add git python3=3.11 && python3 --version
 
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION}
