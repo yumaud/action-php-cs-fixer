@@ -2,11 +2,6 @@
 
 declare(strict_types=1);
 
-$finder = PhpCsFixer\Finder::create()
-    ->in([
-        __DIR__ . '',
-    ]);
-
 $config = new PhpCsFixer\Config();
 
 return $config
@@ -18,5 +13,4 @@ return $config
         'declare_strict_types' => true,
         '@PSR1' => true,
         '@PSR2' => true,
-    ])
-    ->setFinder($finder);
+    ]);
