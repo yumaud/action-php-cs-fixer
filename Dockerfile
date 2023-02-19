@@ -6,7 +6,7 @@ SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 # hadolint ignore=DL3006
 RUN apk --no-cache add git
-RUN apk --no-cache add python3=3.10 && python3 --version
+RUN apk --no-cache add python3=3.11.2-r0 && python3 --version
 
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION}
 
