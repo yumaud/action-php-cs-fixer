@@ -28,10 +28,16 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
-  ### Flags for <linter-name> ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
+  ### Option for php-cs-fixer ###
+  path:
+    description: 'The path to target files (Allow multifile)'
+    default: '.'
+  config:
+    description: 'The path to a config file'
+  rules:
+    description: ''
     default: ''
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
