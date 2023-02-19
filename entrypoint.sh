@@ -14,6 +14,7 @@ php-cs-fixer fix "${INPUT_PATH}" \
       --config="${INPUT_CONFIG}" \
   | python3 parse.py \
   | reviewdog -name="php-cs-fixer" \
+      -f=diff
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
       -filter-mode="${INPUT_FILTER_MODE}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
