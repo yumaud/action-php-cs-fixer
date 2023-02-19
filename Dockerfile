@@ -13,7 +13,7 @@ RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/in
 # TODO: Install a linter and/or change docker image as you need.
 RUN wget -O - -q https://git.io/misspell | sh -s -- -b /usr/local/bin/
 RUN wget -q https://cs.symfony.com/download/php-cs-fixer-v3.phar -O php-cs-fixer
-RUN chmod a+x php-cs-fixer && php-cs-fixer /usr/local/bin/php-cs-fixer
+RUN chmod a+x php-cs-fixer && mv php-cs-fixer /usr/local/bin/php-cs-fixer
 
 COPY entrypoint.sh /entrypoint.sh
 
