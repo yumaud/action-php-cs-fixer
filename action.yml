@@ -34,9 +34,6 @@ inputs:
     default: '.'
   config:
     description: 'The path to a config file'
-  rules:
-    description: ''
-    default: ''
 
 runs:
   using: 'docker'

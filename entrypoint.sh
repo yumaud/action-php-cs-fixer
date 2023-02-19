@@ -12,7 +12,6 @@ php-cs-fixer --version
 
 php-cs-fixer fix "${INPUT_PATH}" \
       --config="${INPUT_CONFIG}" \
-      --rules="${INPUT_RULES}" \
   | python3 parse.py \
   | reviewdog -name="php-cs-fixer" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \

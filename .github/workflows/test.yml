@@ -17,7 +17,6 @@ jobs:
           level: info
           path: "testdata/Test.php"
           config: "testdata/php-cs-fixer.dist.php"
-          rules: "@PSR12"  
 
   test-pr-check:
     if: github.event_name == 'pull_request'
@@ -32,7 +31,6 @@ jobs:
           level: warning
           path: "testdata/Test.php"
           config: "testdata/php-cs-fixer.dist.php"
-          rules: "@PSR12" 
 
   test-pr-review:
     if: github.event_name == 'pull_request'
@@ -48,4 +46,3 @@ jobs:
           reviewdog_flags: -filter-mode=file -fail-on-error
           path: "testdata/Test.php"
           config: "testdata/php-cs-fixer.dist.php"
-          rules: "@PSR12" 
