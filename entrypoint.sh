@@ -21,4 +21,5 @@ php-cs-fixer fix "${INPUT_PATH}" \
       -filter-mode="${INPUT_FILTER_MODE}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
       -level="${INPUT_LEVEL}" \
-      "${INPUT_REVIEWDOG_FLAGS}"
+      "${INPUT_REVIEWDOG_FLAGS}" \
+  || exit 1
