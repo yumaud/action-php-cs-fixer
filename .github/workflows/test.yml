@@ -5,35 +5,6 @@ on:
       - master
   pull_request:
 jobs:
-  test-check:
-    name: runner / php-cs-fixer (github-check)
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-check
-          level: info
-          path: "testdata/Test.php"
-          config: "testdata/.php-cs-fixer.dist.php"
-
-  test-pr-check:
-    if: github.event_name == 'pull_request'
-    name: runner / php-cs-fixer (github-pr-check)
-    timeout-minutes: 10
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-check
-          level: warning
-          path: "testdata/Test.php"
-          config: "testdata/.php-cs-fixer.dist.php"
-
   test-pr-review:
     if: github.event_name == 'pull_request'
     name: runner / php-cs-fixer (github-pr-review)
@@ -46,6 +17,6 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           level: error
-          # reviewdog_flags: -filter-mode=file -fail-on-error
+          reviewdog_flags: -filter-mode=file -fail-on-error
           path: "testdata/Test.php"
           config: "testdata/.php-cs-fixer.dist.php"
