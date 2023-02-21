@@ -11,9 +11,7 @@ RUN apk --no-cache add python3=3.10.10-r0 && python3 --version
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ ${REVIEWDOG_VERSION}
 
 # TODO: Install a linter and/or change docker image as you need.
-RUN wget -O - -q https://git.io/misspell | sh -s -- -b /usr/local/bin/
-RUN wget -q https://cs.symfony.com/download/php-cs-fixer-v3.phar -O php-cs-fixer
-RUN chmod a+x php-cs-fixer && mv php-cs-fixer /usr/local/bin/php-cs-fixer
+RUN wget -q https://cs.symfony.com/download/php-cs-fixer-v3.phar -O php-cs-fixer && sh -s -- -b /usr/local/bin/
 
 COPY entrypoint.sh /entrypoint.sh
 
