@@ -6,6 +6,7 @@ on:
   pull_request:
 jobs:
   test-check:
+    timeout-minutes: 10
     name: runner / php-cs-fixer (github-check)
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -20,6 +21,7 @@ jobs:
           config: "testdata/.php-cs-fixer.dist.php"
 
   test-pr-check:
+    timeout-minutes: 10
     if: github.event_name == 'pull_request'
     name: runner / php-cs-fixer (github-pr-check)
     timeout-minutes: 10
@@ -35,6 +37,7 @@ jobs:
           config: "testdata/.php-cs-fixer.dist.php"
 
   test-pr-review:
+    timeout-minutes: 10
     if: github.event_name == 'pull_request'
     name: runner / php-cs-fixer (github-pr-review)
     timeout-minutes: 10
