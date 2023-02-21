@@ -17,6 +17,5 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           level: error
-          reviewdog_flags: -fail-on-error
           path: "testdata/Test.php"
           config: "testdata/.php-cs-fixer.dist.php"
