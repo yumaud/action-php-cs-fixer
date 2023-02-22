@@ -14,7 +14,7 @@ php-cs-fixer --version
       --config="${INPUT_CONFIG}" \
       --diff \
       --dry-run || true )\
-  | python3 /usr/local/bin/parse.py 
+  | python3 /usr/local/bin/parse.py \
   | reviewdog -name="php-cs-fixer" \
       -f=diff \
       -reporter="${INPUT_REPORTER:-github-pr-review}" \
