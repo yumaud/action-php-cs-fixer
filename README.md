@@ -67,7 +67,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           # Check format path
-          # The paths separate space if you want to check multifile 
-          # You can use tj-actions/changed-files to you want to check only commited files        
+          # The paths separate space if you want to check multifile
+          # You can use tj-actions/changed-files to you want to check only committed files
           path: ./Dog.php ./Cat.php
 ```
