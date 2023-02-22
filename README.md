@@ -58,8 +58,8 @@ name: php-cs-fixer-check
 on: [pull_request]
 jobs:
   # TODO: change `linter_name`.
-  linter_name:
-    name: runner / php-cs-fixer-check
+  php-cs-fixer-check:
+    name: check / php-cs-fixer-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -70,4 +70,6 @@ jobs:
           # The paths separate space if you want to check multifile
           # You can use tj-actions/changed-files to you want to check only committed files
           path: ./Dog.php ./Cat.php
+          # php-cs-fixer setting file path
+          config: .php-cs-fixer.dist.php
 ```
