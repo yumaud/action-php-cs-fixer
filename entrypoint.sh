@@ -10,11 +10,11 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 php-cs-fixer --version
 
-php-cs-fixer fix ${INPUT_PATH} \
+(php-cs-fixer fix ${INPUT_PATH} \
       --config="${INPUT_CONFIG}" \
       --diff \
-      --dry-run || true \
-  | python3 /usr/local/bin/parse.py \
+      --dry-run || true )\
+  | python3 /usr/local/bin/parse.py 
   | reviewdog -name="php-cs-fixer" \
       -f=diff \
       -reporter="${INPUT_REPORTER:-github-pr-review}" \
