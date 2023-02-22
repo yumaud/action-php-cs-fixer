@@ -1,11 +1,11 @@
 # action-php-cs-fixer
 
 <!-- TODO: replace reviewdog/action-template with your repo name -->
-[![Test](https://github.com/reviewdog/action-template/workflows/Test/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3ATest)
-[![reviewdog](https://github.com/reviewdog/action-template/workflows/reviewdog/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3Areviewdog)
-[![depup](https://github.com/reviewdog/action-template/workflows/depup/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3Adepup)
-[![release](https://github.com/reviewdog/action-template/workflows/release/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3Arelease)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-template?logo=github&sort=semver)](https://github.com/reviewdog/action-template/releases)
+[![Test](https://github.com/yumaud/action-php-cs-fixer/workflows/Test/badge.svg)](https://github.com/yumaud/action-php-cs-fixer/actions?query=workflow%3ATest)
+[![reviewdog](https://github.com/yumaud/action-php-cs-fixer/workflows/reviewdog/badge.svg)](https://github.com/yumaud/action-php-cs-fixer/actions?query=workflow%3Areviewdog)
+[![depup](https://github.com/yumaud/action-php-cs-fixer/workflows/depup/badge.svg)](https://github.com/yumaud/action-php-cs-fixer/actions?query=workflow%3Adepup)
+[![release](https://github.com/yumaud/action-php-cs-fixer/workflows/release/badge.svg)](https://github.com/yumaud/action-php-cs-fixer/actions?query=workflow%3Arelease)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/yumaud/action-php-cs-fixer?logo=github&sort=semver)](https://github.com/yumaud/action-php-cs-fixer/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
 
 This Github Action runs php-cs-fixer format check with reviewdog.
