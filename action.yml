@@ -1,6 +1,6 @@
-name: 'TODO: Run <linter-name> with reviewdog'
-description: 'TODO: 🐶 Run <linter-name> with reviewdog on pull requests to improve code review experience.'
-author: 'TODO: <your-name>'
+name: 'Run php-cs-fixer with reviewdog'
+description: '🐶 Run php-cs-fixer with reviewdog on pull requests to improve code review experience.'
+author: 'yumatakei'
 inputs:
   github_token:
     description: 'GITHUB_TOKEN'
@@ -13,8 +13,8 @@ inputs:
     description: 'Report level for reviewdog [info,warning,error]'
     default: 'error'
   reporter:
-    description: 'Reporter of reviewdog command [github-pr-check,github-pr-review].'
-    default: 'github-pr-check'
+    description: 'Reporter of reviewdog command [github-pr-review].'
+    default: 'github-pr-review'
   filter_mode:
     description: |
       Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
@@ -28,10 +28,13 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
-  ### Flags for <linter-name> ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
-    default: ''
+  ### Option for php-cs-fixer ###
+  path:
+    description: 'The path to target files (Allow multifile)'
+    default: '.'
+  config:
+    description: 'The path to a config file'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
