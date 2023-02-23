@@ -14,5 +14,6 @@ RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/in
 RUN wget -q https://cs.symfony.com/download/php-cs-fixer-v3.phar -O php-cs-fixer && chmod a+x php-cs-fixer && mv php-cs-fixer /usr/local/bin/php-cs-fixer
 
 COPY entrypoint.sh /entrypoint.sh
+COPY parse.py /usr/local/bin/parse.py
 
 ENTRYPOINT ["/entrypoint.sh"]
