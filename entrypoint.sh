@@ -23,7 +23,7 @@ if [ "${INPUT_REPORTER}" = "github-pr-review" ]; then
 		-fail-on-error="${INPUT_FAIL_ON_ERROR}" \
 		"${INPUT_REVIEWDOG_FLAGS}" \
 	|| exit 1
-elif [ "${INPUT_REPORTER}" = "github-check" ] || [ "${INPUT_REPORTER}"  "github-pr-check" ]; then
+elif [ "${INPUT_REPORTER}" = "github-check" ] || [ "${INPUT_REPORTER}" = "github-pr-check" ]; then
 	(php-cs-fixer fix "${INPUT_PATH}" \
 		--config="${INPUT_CONFIG}" \
 		--diff \
