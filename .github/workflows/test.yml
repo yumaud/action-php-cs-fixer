@@ -18,7 +18,7 @@ jobs:
           reporter: github-check
           level: warning
           filter_mode: nofilter
-          path: ./
+          path: 'Test.php'
           config: '.php-cs-fixer.dist.php'
 
   test-pr-check:
@@ -35,7 +35,7 @@ jobs:
           reporter: github-pr-check
           level: warning
           filter_mode: nofilter
-          path: ./
+          path: 'Test.php'
           config: '.php-cs-fixer.dist.php'
 
   test-pr-review:
@@ -52,5 +52,5 @@ jobs:
           reporter: github-pr-review
           level: error
           filter_mode: nofilter
-          path: ./
+          path: 'Test.php'
           config: '.php-cs-fixer.dist.php'
