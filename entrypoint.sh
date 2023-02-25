@@ -9,6 +9,7 @@ fi
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 php-cs-fixer --version
+echo "${INPUT_REPORTER}"
 
 if [ "${INPUT_REPORTER}" = "github-pr-review" ]; then
 	(php-cs-fixer fix "${INPUT_PATH}" \
@@ -18,7 +19,7 @@ if [ "${INPUT_REPORTER}" = "github-pr-review" ]; then
 	| python3 /usr/local/bin/parse.py \
 	| reviewdog -name="php-cs-fixer" \
 		-f=diff \
-	  -reporter=github-pr-review \
+	  	-reporter=github-pr-review \
 		-filter-mode="${INPUT_FILTER_MODE}" \
 		-fail-on-error="${INPUT_FAIL_ON_ERROR}" \
 		"${INPUT_REVIEWDOG_FLAGS}" \
@@ -27,7 +28,7 @@ elif [ "${INPUT_REPORTER}" = "github-check" ] || [ "${INPUT_REPORTER}" = "github
 	(php-cs-fixer fix "${INPUT_PATH}" \
 		--config="${INPUT_CONFIG}" \
 		--diff \
-		--dry-run
+		--dry-run \
 		--format=checkstyle|| true) \
 	| python3 /usr/local/bin/parse.py \
 	| reviewdog -name="php-cs-fixer" \
