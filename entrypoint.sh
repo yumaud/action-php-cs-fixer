@@ -10,7 +10,7 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 php-cs-fixer --version
 
-if [ "${INPUT_REPORTER}" -eq "github-pr-review" ]; then
+if [ "${INPUT_REPORTER}" = "github-pr-review" ]; then
 	(php-cs-fixer fix "${INPUT_PATH}" \
 		--config="${INPUT_CONFIG}" \
 		--diff \
@@ -23,7 +23,7 @@ if [ "${INPUT_REPORTER}" -eq "github-pr-review" ]; then
 		-fail-on-error="${INPUT_FAIL_ON_ERROR}" \
 		"${INPUT_REVIEWDOG_FLAGS}" \
 	|| exit 1
-elif [ "${INPUT_REPORTER}" -eq "github-check" ] || [ "${INPUT_REPORTER}" -eq "github-pr-check" ]; then
+elif [ "${INPUT_REPORTER}" = "github-check" ] || [ "${INPUT_REPORTER}"  "github-pr-check" ]; then
 	(php-cs-fixer fix "${INPUT_PATH}" \
 		--config="${INPUT_CONFIG}" \
 		--diff \
