@@ -50,7 +50,7 @@ jobs:
           workdir: ./testdata/
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
-          level: error
+          level: warning
           filter_mode: nofilter
           path: 'Test.php'
           config: '.php-cs-fixer.dist.php'
