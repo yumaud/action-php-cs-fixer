@@ -32,14 +32,14 @@ elif [ "${INPUT_REPORTER}" = "github-check" ] || [ "${INPUT_REPORTER}" = "github
 		--format=checkstyle|| true) \
 	| python3 /usr/local/bin/parse.py \
 	| reviewdog -name="php-cs-fixer" \
-		-f=diff \
+		-f=checkstyle \
 		-reporter="${INPUT_REPORTER}" \
 		-filter-mode="${INPUT_FILTER_MODE}" \
 		-fail-on-error="${INPUT_FAIL_ON_ERROR}" \
 		-level="${INPUT_LEVEL}" \
 		"${INPUT_REVIEWDOG_FLAGS}" \
 	|| exit 1
-else
+ else
   echo "${INPUT_REPORTER} is not supporterd"
   exit 1
 fi
