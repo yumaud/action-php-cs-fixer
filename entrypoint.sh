@@ -22,7 +22,7 @@ if [ "${INPUT_REPORTER}" = "github-pr-review" ]; then
 	  	-reporter=github-pr-review \
 		-filter-mode="${INPUT_FILTER_MODE}" \
 		-fail-on-error="${INPUT_FAIL_ON_ERROR}" \
-		-level="${INPUT_LEVEL}"
+		-level="${INPUT_LEVEL}" \
 		"${INPUT_REVIEWDOG_FLAGS}" \
 	|| exit 1
 elif [ "${INPUT_REPORTER}" = "github-check" ] || [ "${INPUT_REPORTER}" = "github-pr-check" ]; then
